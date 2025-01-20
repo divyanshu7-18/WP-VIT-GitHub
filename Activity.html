@@ -1,9 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Div vs Span</title>
+    <title>Div and Span Example</title>
+    <style>
+        .div-box {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+        .span-highlight {
+            color:blue;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div>This is a div element containing <span>this span element</span> for inline styling.</div>
+    <div class="div-box">
+        This is a div container.
+        <span class="span-highlight">This is a span element inside a div.</span>
+    </div>
+    <div class="div-box">
+        Another div container.
+        <span>This span has no styling applied.</span>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Div vs Section</title>
+</head>
+<body>
+    <div>
+        <h2>Div Example</h2>
+        <p>This is a generic block container for grouping content.</p>
+    </div>
+    <section>
+        <h2>Section Example</h2>
+        <p>This defines a thematic grouping of content, such as a chapter or topic.</p>
+    </section>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paragraph vs Article</title>
+</head>
+<body>
+    <p>This is a single paragraph, 
+        part of the document's main content.</p>
+    <article>
+        <h2>Article Example</h2>
+        <p>This is the first paragraph 
+            of an article.</p>
+        <p>This is the second paragraph, 
+            expanding on the topic.</p>
+    </article>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation vs Anchor</title>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <p>Learn more on our <a href="faq.html">FAQ page</a>.</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Figure vs Image</title>
+</head>
+<body>
+    <figure>
+        <img src="example.jpg" alt="Example Image">
+        <figcaption>Image Caption</figcaption>
+    </figure>
+    <img src="example.jpg" alt="Example Image">
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Label vs Legend</title>
+</head>
+<body>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+    </form>
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname">
+            <br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname">
+        </fieldset>
+    </form>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strong vs Bold vs Emphasis</title>
+</head>
+<body>
+    <p>This text is <b>bold</b> for styling.</p>
+    <p>This text has <strong>strong importance</strong> in meaning.</p>
+    <p>This text is <em>emphasized</em> for stress in context.</p>
 </body>
 </html>

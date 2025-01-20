@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements in HTML5</title>
+</head>
+<body style="background-color: #d3d3d3;">
+    <h2>FORM2</h2>
+    <label for="input-text">Enter Text:</label>
+    <input type="text" id="input-text" name="input-text" placeholder="Type something"><br><br>
+    <fieldset>
+        <legend>Select Your Gender:</legend>
+        <label><input type="radio" name="user-gender" value="male"> Male</label>
+        <label><input type="radio" name="user-gender" value="female"> Female</label>
+        <label><input type="radio" name="user-gender" value="other"> Other</label>
+    </fieldset><br>
+    <fieldset>
+        <legend>Pick Your Hobbies:</legend>
+        <label><input type="checkbox" name="hobby" value="programming"> Programming</label><br>
+        <label><input type="checkbox" name="hobby" value="gaming"> Gaming</label><br>
+        <label><input type="checkbox" name="hobby" value="reading"> Reading</label><br>
+        <label><input type="checkbox" name="hobby" value="travel"> Traveling</label><br>
+    </fieldset><br>
+    <label for="prog-languages">Choose Programming Languages:</label><br>
+    <select id="prog-languages" name="languages[]" size="4">
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="cpp">C++</option>
+    </select><br><br>
+    <label for="nation">Country:</label><br>
+    <select id="nation" name="country">
+        <option value="us">USA</option>
+        <option value="ca">Canada</option>
+        <option value="in">India</option>
+        <option value="gb">UK</option>
+        <option value="au">Australia</option>
+    </select><br><br>
+    <label for="feedback">Feedback:</label><br>
+    <textarea id="feedback" name="feedback" rows="5" placeholder="Share your thoughts"></textarea><br><br>
+    <fieldset>
+        <legend>Your Details</legend>
+        <label for="fullname">Name:</label><br>
+        <input type="text" id="fullname" name="fullname" placeholder="Full Name"><br><br>
+        
+        <label for="user-email">Email:</label><br>
+        <input type="email" id="user-email" name="user-email" placeholder="Email Address"><br><br>
+    </fieldset><br>
+    <label for="favorite-color">Favorite Color:</label><br>
+    <input list="color-list" id="favorite-color" name="favorite-color" placeholder="Choose a color"><br>
+    <datalist id="color-list">
+        <option value="Red">
+        <option value="Green">
+        <option value="Blue">
+        <option value="Yellow">
+        <option value="Orange">
+    </datalist><br><br>
+    <button type="submit">Send</button>
+
+</body>
+</html>

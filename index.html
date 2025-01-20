@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #48d636;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            display: block;
+            text-align: center;
+            float: left;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        section, aside {
+            flex: 1;
+            padding: 15px;
+        }
+        aside {
+            background-color: #f9f9f9;
+            border-left: 2px solid #ddd;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+        #navigation {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+        #blog {
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>Explore our theme and enjoy the content!</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#navigation">Activities</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Home Page</h2>
+            <p>Welcome to the Web Programming Assignment by <br><b>Divyanshu Kumar (ID: 23BDS0107)</b></p>
+            <p>This project showcases a blend of creativity and technical expertise in modern web development, featuring responsive design, dynamic content, and user-friendly navigation. It highlights advanced web programming techniques, attention to detail, and a commitment to coding excellence.</p>
+            <p>Explore this assignment to experience innovative solutions and gain insight into the skills and efforts behind its creation.</p>
+            <img src="image.png" alt="Example Photo" style="width:100%; max-width:200px;">
+        </section>
+        <section id="navigation">
+            <h2>Assignments</h2>
+            <p>Discover all activities from Assignment 1A, 1B, 1C, 2A and 2B:</p>
+            <ul>
+                <li>Assignment 1A
+                    <ul>
+                        <li><a href="home.html">Activity 1</a></li>
+                        <li><a href="list.html">Activity 2</a></li>
+                        <li><a href="table1.html">Activity 3</a></li>
+                    </ul>
+                </li>
+                <li>Assignment 1B
+                    <ul>
+                        <li><a href="Assignment 1B.pdf">Activity 4</a></li>
+                    </ul>
+                </li>
+                <li>Assignment 1C
+                    <ul>
+                        <li><a href="Activity.html">Activity 6: Forum 1</a></li>
+                        <li><a href="Activity6Forum2.html">Activity 6: Forum 2</a></li>
+                        <li><a href="Activity7.html">Activity 7</a></li>
+                    </ul>
+                </li>
+                <li>Assignment 2A
+                    <ul>
+                        <li><a href="Activity9.html">Activity 9</a></li>
+                        <li><a href="Activity10.html">Activity 10</a></li>
+                    </ul>
+                </li>
+                <li>Assignment 2B
+                    <ul>
+                        <li><a href="Activity11.html">Activity 11</a></li>
+                        <li><a href="Activity12.html">Activity 12</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section id="blog">
+            <h2>Blog Page</h2>
+            <p>Check out our latest photos and videos:</p>
+            <img src="github.png" alt="Example Photo" style="width:100%; max-width:200px;">
+            <p>Watch our <a href="https://example.com/video" target="_blank">highlight video</a> here.</p>
+        </section>
+        <aside>
+            <h3>Side Notes</h3>
+            <p>Stay updated with our latest news and announcements.</p>
+        </aside>
+    </main>
+    <footer>
+        <div class="contact-form" id="contact">
+            <h3>Contact Us</h3>
+            <form action="submit_form.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
