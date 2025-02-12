@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Yoga Day</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border: 2px solid #2c3e50;
+            margin-bottom: 20px;
+        }
+        .slider img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .slider img.active {
+            display: block;
+        }
+        .toggle-btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container, .bill-container, .confirmation-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .form-container.active, .bill-container.active, .confirmation-container.active {
+            display: block;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .bill-details, .confirmation-code {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>International Yoga Day</h1>
+
+        <!-- Content Slider -->
+        <div class="slider">
+            <img src="yoga1.jpg" alt="Yoga Image 1" class="active">
+            <img src="yoga2.jpg" alt="Yoga Image 2">
+            <img src="yoga3.jpg" alt="Yoga Image 3">
+        </div>
+
+        <!-- Toggle Button for Hiding/Unhiding Form -->
+        <button class="toggle-btn" onclick="toggleForm()">Show Registration Form</button>
+
+        <!-- Registration Form -->
+        <div class="form-container">
+            <h2>Event Registration Form</h2>
+            <form onsubmit="return submitForm(event)">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="type">Registration Type:</label>
+                <select id="type" name="type" required>
+                    <option value="employee">Government Employee (25% Discount)</option>
+                    <option value="student">Student (50% Discount)</option>
+                    <option value="general">General</option>
+                </select>
+
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" required></textarea>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <!-- Bill Generation Section -->
+        <div class="bill-container">
+            <h2>Bill Details</h2>
+            <div class="bill-details">
+                <p><strong>Name:</strong> <span id="bill-name"></span></p>
+                <p><strong>Email:</strong> <span id="bill-email"></span></p>
+                <p><strong>Phone:</strong> <span id="bill-phone"></span></p>
+                <p><strong>Registration Type:</strong> <span id="bill-type"></span></p>
+                <p><strong>Total Amount:</strong> ₹<span id="bill-amount"></span></p>
+            </div>
+        </div>
+
+        <!-- Confirmation Code Section -->
+        <div class="confirmation-container">
+            <h2>Registration Confirmation</h2>
+            <div class="confirmation-code">
+                <p><strong>Confirmation Code:</strong> <span id="confirmation-code"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Content Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider img');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+        // Toggle Form Visibility
+        function toggleForm() {
+            const formContainer = document.querySelector('.form-container');
+            formContainer.classList.toggle('active');
+        }
+
+        // Submit Form and Generate Bill
+        function submitForm(event) {
+            event.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const type = document.getElementById('type').value;
+            const comments = document.getElementById('comments').value;
+
+            // Display form data dynamically
+            document.getElementById('bill-name').textContent = name;
+            document.getElementById('bill-email').textContent = email;
+            document.getElementById('bill-phone').textContent = phone;
+            document.getElementById('bill-type').textContent = type;
+
+            // Calculate bill with discount
+            const baseAmount = 1000; // Base registration fee
+            let discount = 0;
+            if (type === 'employee') {
+                discount = 0.25;
+            } else if (type === 'student') {
+                discount = 0.5;
+            }
+            const totalAmount = baseAmount - (baseAmount * discount);
+            document.getElementById('bill-amount').textContent = totalAmount;
+
+            // Show bill section
+            document.querySelector('.bill-container').classList.add('active');
+
+            // Generate random confirmation code
+            const confirmationCode = Math.floor(100000 + Math.random() * 900000);
+            document.getElementById('confirmation-code').textContent = confirmationCode;
+
+            // Show confirmation section
+            document.querySelector('.confirmation-container').classList.add('active');
+
+            return false;
+        }
+    </script>
+</body>
+</html>

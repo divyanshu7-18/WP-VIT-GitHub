@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <script>
+        function validateRegistration() {
+            // Name validation (non-empty and characters only)
+            const name = document.getElementById("name").value;
+            if (name.trim() === "") {
+                alert("Name cannot be empty.");
+                return false;
+            }
+            if (!/^[A-Za-z\s]+$/.test(name)) {
+                alert("Name should contain only characters.");
+                return false;
+            }
+
+            // Phone number validation
+            const phone = document.getElementById("phone").value;
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            // Email validation
+            const email = document.getElementById("email").value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Password validation
+            const password = document.getElementById("password").value;
+            if (password.trim() === "") {
+                alert("Password cannot be empty.");
+                return false;
+            }
+
+            // Confirm password validation
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            // Radio button validation (Gender)
+            const gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                alert("Please select your gender.");
+                return false;
+            }
+
+            // Checkbox validation (Terms and Conditions)
+            const terms = document.getElementById("terms").checked;
+            if (!terms) {
+                alert("You must agree to the terms and conditions.");
+                return false;
+            }
+
+            // Text area validation (Comments)
+            const comments = document.getElementById("comments").value;
+            if (comments.trim() === "") {
+                alert("Please provide some comments.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Event Registration Form</h1>
+    <form onsubmit="return validateRegistration()">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male"> Male
+        <input type="radio" id="female" name="gender" value="female"> Female
+        <input type="radio" id="other" name="gender" value="other"> Other<br><br>
+
+        <label>Event Preferences:</label>
+        <input type="checkbox" id="workshop" name="workshop" value="workshop"> Workshop
+        <input type="checkbox" id="seminar" name="seminar" value="seminar"> Seminar
+        <input type="checkbox" id="networking" name="networking" value="networking"> Networking<br><br>
+
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the terms and conditions.</label><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
